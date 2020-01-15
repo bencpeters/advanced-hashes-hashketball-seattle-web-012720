@@ -153,5 +153,9 @@ def player_stats(player)
   game_hash.each do |(side, info_hash)|
     info_hash[:players].each do |player_hash|
       if player_hash[:player_name] == player
+        play_hash.shift
         return player_hash
+      end
+    end
+  end
 end
