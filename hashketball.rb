@@ -181,5 +181,6 @@ def maximum(to_compare, to_return)
 end
 
 def winning_team
-  game_hash[:home][:players].reduce(0) 
+  game_hash[:home][:players].reduce(0) do |(total, player_hash)|
+    
   
