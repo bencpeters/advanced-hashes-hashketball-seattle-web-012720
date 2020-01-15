@@ -141,3 +141,7 @@ def team_names
   game_hash.map {|(side, info_hash)| info_hash[:team_name]}
 end
 
+def player_numbers(team)
+  
+  game_hash.each do |(side, info_hash)|
+    
