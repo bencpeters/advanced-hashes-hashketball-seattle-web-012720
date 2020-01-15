@@ -110,7 +110,10 @@ def game_hash
 end
 
 def num_points_scored(player)
-  game_hash.each {|pair| p pair}
+  game_hash.each do |(key, value)|
+    p key
+    p value
+  end
 end
 
 
