@@ -138,6 +138,6 @@ def team_colors(team)
 end
 
 def team_names
-  game_hash.reduce {|(side, info_hash)| info_hash[:team_name]}
+  game_hash.map {|(side, info_hash)| info_hash[:team_name]}
 end
 
