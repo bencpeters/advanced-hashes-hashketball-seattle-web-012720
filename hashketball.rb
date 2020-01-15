@@ -180,7 +180,12 @@ def maximum(to_compare, to_return)
   find_max[to_return]
 end
 
+def point_total(side)
+  game_hash[side][:players].reduce(0) do |(total, player_hash)|
+    total + player_hash[:points]
+  end
+end
+
 def winning_team
-  game_hash[:home][:players].reduce(0) do |(total, player_hash)|
-    
-  
+  home_points = point_totals(:home)
+  away_points = point_totals(:away)
