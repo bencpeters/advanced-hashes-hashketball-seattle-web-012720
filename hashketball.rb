@@ -182,7 +182,7 @@ end
 
 def point_total(side)
   p side
-  game_hash[side][:players].reduce(0) do |(total, player_hash)|
+  game_hash[side][:players].reduce(0) do |total, player_hash|
     total + player_hash[:points]
     p total
   end
