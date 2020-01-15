@@ -161,23 +161,23 @@ def player_stats(player)
 end
 
 def big_shoe_rebounds #find player with largest shoe size and return their rebounds
-  maximum(:shoe, :rebounds)
+  find_max(:shoe, :rebounds)
 end
 
 #bonus
 
 def most_points_scored
-  maximum(:points, :player_name)
+  find_max(:points, :player_name)
 end
 
-def maximum(to_compare, to_return)
-  find_max = game_hash.reduce({}) do |memo, (side, info_hash)|
+def find_max(to_compare, to_return)
+  maximum = game_hash.reduce({}) do |memo, (side, info_hash)|
     memo = info_hash[:players][0] if !memo[to_compare]
     max_hash = info_hash[:players].max_by {|player_hash| player_hash[to_compare]}
     memo = max_hash if max_hash[to_compare] > memo[to_compare]
     memo
   end
-  find_max[to_return]
+  maximum[to_return]
 end
 
 def point_total(side)
@@ -204,5 +204,11 @@ def player_with_longest_name
     memo
   end
   find_longest[:player_name]
+end
+
+def long_name_steals_a_ton?
+  player_key = player_with_longest_name
+  best_stealer = find_max(:steals, :player_name)
+  player_key == best_stealer
 end
   
