@@ -189,3 +189,5 @@ end
 def winning_team
   home_points = point_totals(:home)
   away_points = point_totals(:away)
+  [home_points, away_points].max
+end
