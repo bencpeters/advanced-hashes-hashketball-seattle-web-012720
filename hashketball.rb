@@ -134,7 +134,7 @@ def team_colors(team)
   game_hash.each do |(side, info_hash)|
     p side
     if info_hash[:team_name] = team
-      p info_hash[:team_name]
+      p "#{info_hash[:team_name]} is #{team}!"
       p info_hash[:colors]
       return info_hash[:colors]
     end
