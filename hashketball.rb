@@ -183,7 +183,6 @@ end
 def point_total(side)
   game_hash[side][:players].reduce(0) do |total, player_hash|
     total += player_hash[:points]
-    p total
   end
 end
 
@@ -196,3 +195,6 @@ def winning_team
     return game_hash[:away][:team_name]
   end
 end
+
+def player_with_longest_name
+  
