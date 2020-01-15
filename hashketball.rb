@@ -128,7 +128,7 @@ def shoe_size(player)
       end
     end
   end
-e
+end
 
 
 
