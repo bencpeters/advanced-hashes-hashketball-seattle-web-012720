@@ -197,12 +197,12 @@ def winning_team
 end
 
 def player_with_longest_name
-  find_max = game_hash.reduce({}) do |memo, (side, info_hash)|
+  find_longest = game_hash.reduce({}) do |memo, (side, info_hash)|
     memo = info_hash[:players][0] if !memo[:player_name]
-    max_hash = info_hash[:players].max_by {|player_hash| player_hash[:player_name].length}
-    memo = max_hash if max_hash[:player_name].length > memo[:player_name].length
+    longest_hash = info_hash[:players].max_by {|player_hash| player_hash[:player_name].length}
+    memo = longest_hash if longest_hash[:player_name].length > memo[:player_name].length
     memo
   end
-  find_max[:player_name]
+  find_longest[:player_name]
 end
   
