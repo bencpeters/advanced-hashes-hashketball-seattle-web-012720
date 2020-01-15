@@ -130,6 +130,7 @@ def shoe_size(player)
 end
 
 def team_colors(team)
+  p "checking for #{team}"
   game_hash.each do |(side, info_hash)|
     p side
     if info_hash[:team_name] = team
