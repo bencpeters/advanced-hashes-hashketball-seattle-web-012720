@@ -189,5 +189,9 @@ end
 def winning_team
   home_points = point_totals(:home)
   away_points = point_totals(:away)
-  [home_points, away_points].max
+  if home_points > away_points
+    return game_hash[:home][:team_name]
+  else
+    return game_hash[:away][:team_name]
+  end
 end
