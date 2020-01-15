@@ -137,7 +137,7 @@ def team_colors(team)
     if info_hash[:team_name] == team
       p "#{info_hash[:team_name]} is #{team}!"
       p info_hash[:colors]
-    #  return info_hash[:colors]
+      return info_hash[:colors]
     end
   end
 end
