@@ -164,6 +164,6 @@ def big_shoe_rebounds
   #find player with largest shoe size and return their rebounds
   game_hash.each do |(side, info_hash)|
     info_hash[:players].max do |(hash1, hash2)|
-      
+      hash1[:shoe] <=> hash2[:shoe]
       
       
