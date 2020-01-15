@@ -209,6 +209,8 @@ end
 def long_name_steals_a_ton?
   player_key = player_with_longest_name
   best_stealer = find_max(:steals, :player_name)
+  p player_key
+  p best_stealer
   player_key == best_stealer
 end
   
