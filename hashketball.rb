@@ -137,5 +137,7 @@ def team_colors(team)
   end
 end
 
-
+def team_names
+  game_hash.each {(side, info_hash) info_hash[:team_name]}
+end
 
