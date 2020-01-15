@@ -130,9 +130,8 @@ def shoe_size(player)
 end
 
 def team_colors(team)
-  p game_hash[:home][:colors]
-  p game_hash[:away][:colors]
   game_hash.each do |(side, info_hash)|
+    p side
     if info_hash[:team_name] = team
       p info_hash[:team_name]
       p info_hash[:colors]
