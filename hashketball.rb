@@ -169,4 +169,16 @@ def big_shoe_rebounds #find player with largest shoe size and return their rebou
   end
   find_largest[:rebounds]
 end
+
+#bonus
+
+def most_points_scored
+  find_scorer = game_hash.reduce({}) do |memo, (side, info_hash)|
+    memo = info_hash[:players][0] if !memo[:points]
+    most_points_hash = info_hash[:players].max_by {|player_hash| player_hash[:points]}
+    memo = most_points_hash if most_points_hash[:points] > memo[:points]
+    memo
+  end
+  find_scorer[:player_name]
+end
       
